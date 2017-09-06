@@ -19,7 +19,6 @@ public class App
 
     public static void main( String[] args )
     {
-//        test();
         Options options = new Options();
         CommandLineParser commandLineParser = new PosixParser();
         try {
@@ -41,10 +40,4 @@ public class App
 
     }
 
-    public static void test() {
-//        Client client = new Client();
-//        client.setIp("118.190.40.58");
-//        client.setPort(9999);
-//        client.connect();
-    }
 }
