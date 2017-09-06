@@ -13,6 +13,16 @@ import java.util.Date;
  */
 public class TcpServer {
 
+    private int port;
+
+    public int getPort() {
+        return port;
+    }
+
+    public void setPort(int port) {
+        this.port = port;
+    }
+
     public void starServer() {
 
         try {
@@ -22,7 +32,7 @@ public class TcpServer {
              * 指定绑定的端口
              * 并监听此端口
              */
-            ServerSocket serverSocket = new ServerSocket(9999);
+            ServerSocket serverSocket = new ServerSocket(port);
             Socket socket = null;
             int count = 0;//记录客户端的数量
             /**
