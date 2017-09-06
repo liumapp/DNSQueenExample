@@ -1,6 +1,8 @@
 package com.liumapp.tcp;
 
 import java.io.IOException;
+import java.net.Inet4Address;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.text.SimpleDateFormat;
@@ -32,13 +34,14 @@ public class TcpServer {
              * 指定绑定的端口
              * 并监听此端口
              */
-            ServerSocket serverSocket = new ServerSocket(port);
+            InetAddress addr = Inet4Address.getByName("127.0.0.1");
+            ServerSocket serverSocket = new ServerSocket(port, 128, addr);
             Socket socket = null;
             int count = 0;//记录客户端的数量
             /**
              * 调用accept()方法开始监听，等待客户端的连接
              */
-            System.out.println("等待客户连接");
+            System.out.println("wait for connect");
 
             while(true) {
                 socket = serverSocket.accept();

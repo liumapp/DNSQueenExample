@@ -1,6 +1,8 @@
 package com.liumapp.tcpclient;
 
 import java.io.*;
+import java.net.Inet4Address;
+import java.net.InetSocketAddress;
 import java.net.Socket;
 
 /**
@@ -38,7 +40,8 @@ public class Client {
              *  创建客户端socket
              *  指定服务器地址和端口
              */
-            Socket socket = new Socket(ip , port);
+            Socket socket = new Socket();
+            socket.connect(new InetSocketAddress(ip , port));
 
             /**
              * 获取输出流
