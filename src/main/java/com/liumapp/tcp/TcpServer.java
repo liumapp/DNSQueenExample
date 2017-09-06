@@ -34,8 +34,8 @@ public class TcpServer {
              * 指定绑定的端口
              * 并监听此端口
              */
-            InetAddress addr = Inet4Address.getByName("127.0.0.1");
-            ServerSocket serverSocket = new ServerSocket(port, 128, addr);
+//            InetAddress addr = Inet4Address.getByName("127.0.0.1");
+            ServerSocket serverSocket = new ServerSocket(port, 128);
             Socket socket = null;
             int count = 0;//记录客户端的数量
             /**
