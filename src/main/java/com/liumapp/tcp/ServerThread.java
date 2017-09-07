@@ -1,5 +1,7 @@
 package com.liumapp.tcp;
 
+import org.springframework.stereotype.Component;
+
 import java.io.*;
 import java.net.Socket;
 

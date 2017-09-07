@@ -1,5 +1,7 @@
 package com.liumapp.tcpclient;
 
+import org.springframework.stereotype.Component;
+
 import java.io.*;
 import java.net.Inet4Address;
 import java.net.InetSocketAddress;
