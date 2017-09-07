@@ -12,6 +12,6 @@ import org.springframework.stereotype.Component;
 public class WorkerExample extends StandReadyWorker {
     @Override
     public String doWhatYouShouldDo(String whatQueenSays) {
-        return "" + whatQueenSays;
+        return "queen says " + whatQueenSays;
     }
 }

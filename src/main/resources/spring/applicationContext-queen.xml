@@ -14,6 +14,9 @@
         <bean name="WokerEar" class="com.liumapp.DNSQueen.worker.process.WokerEar">
             <property name="startDelay" value="3000"></property>
         </bean>
+        <bean name="queenTcpSocketMonitor" class="com.liumapp.DNSQueen.worker.tcp.TCPSocketMonitor">
+            <constructor-arg name="port" type="int" value="40310"></constructor-arg>
+        </bean>
     </beans>
 
 

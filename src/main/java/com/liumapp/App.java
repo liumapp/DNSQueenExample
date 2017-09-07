@@ -5,6 +5,7 @@ import com.liumapp.tcpclient.Client;
 import com.liumapp.utils.SpringLocator;
 import org.apache.commons.cli.*;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -12,8 +13,10 @@ import java.util.List;
  * Hello world!
  *
  */
+@Component
 public class App
 {
+    private boolean isShutDown = false;
 
     public static String SERVER = "tcpServer";
 
@@ -42,6 +45,13 @@ public class App
             } else if(list.get(0).equals(App.QUEEN)) {
                 SpringLocator.applicationContext = new ClassPathXmlApplicationContext("classpath*:/spring/applicationContext*.xml");
                 App app = SpringLocator.getBean(App.class);
+                while (!app.isShutDown) {
+                    try {
+                        Thread.sleep(10000000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         } catch (ParseException e) {
             e.printStackTrace();
